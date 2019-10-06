@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  lambda-mem-monitor
+
+  Sample SAM Template for lambda-mem-monitor
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 60
+    MemorySize: 640
+    Environment:
+      Variables:
+        FFPROBE_PATH: "/opt/bin/ffprobe"
+
+Resources:
+  LambdaMemMonitorFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: lambda-mem-monitor/
+      Handler: app.lambdaHandler
+      Runtime: nodejs10.x
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  LambdaMemMonitorFunction:
+    Description: "LambdaMemMonitorFunction Lambda Function ARN"
+    Value: !GetAtt LambdaMemMonitorFunction.Arn
+  LambdaMemMonitorFunctionIamRole:
+    Description: "Implicit IAM Role created for LambdaMemMonitorFunction function"
+    Value: !GetAtt LambdaMemMonitorFunctionRole.Arn

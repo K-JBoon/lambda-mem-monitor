@@ -1,0 +1,12 @@
+{
+  "name": "lambda_mem_monitor",
+  "version": "1.0.0",
+  "description": "Lambda Memory Monitoring Test",
+  "main": "app.js",
+  "author": "Klaas-Jan Boon",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "unix-mem-monitor": "^1.0.1"
+  }
+}
