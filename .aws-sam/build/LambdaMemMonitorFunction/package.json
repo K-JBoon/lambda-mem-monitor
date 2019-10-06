@@ -6,7 +6,8 @@
   "author": "Klaas-Jan Boon",
   "license": "MIT",
   "scripts": {},
+  "repository": "github:K-JBoon/unix-mem-monitor",
   "dependencies": {
-    "unix-mem-monitor": "^1.0.1"
+    "unix-mem-monitor": "^1.0.2"
   }
 }

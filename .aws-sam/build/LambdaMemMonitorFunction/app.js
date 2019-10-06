@@ -16,8 +16,6 @@ exports.lambdaHandler = async (event, context) => {
 
         spawn('tail', ['-f', '/bin/ls']);
 
-        console.log(MemMonitor);
-
         const memMonitor = new MemMonitor({ PID: process.pid, monitorChildProcesses: true });
 
         await memMonitor.init();
